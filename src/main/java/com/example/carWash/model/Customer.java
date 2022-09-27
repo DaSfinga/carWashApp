@@ -1,6 +1,7 @@
 package com.example.carWash.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,7 +22,6 @@ public class Customer implements Serializable {
     private String lastName;
     private Integer numberOfRuns;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "customer_id", fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Bill> billList;
 }

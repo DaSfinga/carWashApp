@@ -35,7 +35,7 @@ public class ProgramService {
     }
 
     public void addBillToProgram(Bill bill){
-        Program program = bill.getProgram();
+        Program program = findProgramById(bill.getProgramId());
         List<Bill> billList = program.getBillList();
         billList.add(bill);
         program.setBillList(billList);

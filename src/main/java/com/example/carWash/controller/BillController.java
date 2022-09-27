@@ -29,7 +29,7 @@ public class BillController {
         return new ResponseEntity<>(newBill, HttpStatus.OK);
     }
 
-    @GetMapping("/getall")
+    @GetMapping
     public ResponseEntity<List<Bill>> getBills () {
         List<Bill> bills = billService.findAllBills();
         return new ResponseEntity<>(bills, HttpStatus.OK);

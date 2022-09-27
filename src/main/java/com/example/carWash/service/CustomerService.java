@@ -38,7 +38,7 @@ public class CustomerService {
     }
 
     public void addBillToCustomer(Bill bill){
-        Customer customer = bill.getCustomer();
+        Customer customer = findCustomerById(bill.getCustomerId());
         List<Bill> billList = customer.getBillList();
         billList.add(bill);
         customer.setBillList(billList);

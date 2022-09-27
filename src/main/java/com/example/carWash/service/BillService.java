@@ -29,8 +29,8 @@ public class BillService {
         Bill bill = new Bill();
         Customer customer = customerService.findCustomerById(billAdd.getCustomerId());
         Program program = programService.findProgramById((billAdd.getProgramId()));
-        bill.setCustomer(customer);
-        bill.setProgram(program);
+        bill.setCustomerId(billAdd.getCustomerId());
+        bill.setProgramId(billAdd.getProgramId());
         customer.setNumberOfRuns(customer.getNumberOfRuns()+1);
         if(customer.getNumberOfRuns()%10 == 0)
             bill.setPrice(program.getPrice() * 0.9);
